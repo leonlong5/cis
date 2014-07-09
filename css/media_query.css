@@ -1,0 +1,60 @@
+
+/********************************************
+media queries
+********************************************/
+
+/*from phone to tablet*/
+@media only screen and (min-width:481px){ 
+  .main,.secondary,.third{
+    float:left;
+  }
+  .main{
+    width:100%;
+  }
+  .secondary, .third{
+    width:35%;
+    background: lightgreen;
+  }
+  .extra{
+    float: right;
+    width:60%;
+    margin-left: 5%;
+  }
+}
+
+/*from tablet to desktop*/
+@media only screen and (min-width:769px){
+  .logo{
+    float:left;
+    width:30%;
+  }
+  nav{
+    float:right;
+    width:70%;
+    border:none;
+    margin:0;
+    height:100%;
+  }
+  
+  nav a{
+    padding:29.8px;
+  }
+/*  .main{
+    width:40%;
+  }
+  .secondary{
+    margin-left:2.5%;
+  }
+  .extra{
+    width:20%;
+    margin-left:2.5%;
+  }*/
+}
+
+/*set the max-width*/
+@media only screen and (min-width:1024px){
+  .wrap{
+    max-width:1024px;
+  }
+}
+
