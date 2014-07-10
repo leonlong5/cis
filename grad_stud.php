@@ -9,7 +9,6 @@
     <meta name="author" content="Long Wang">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style_gs.css">
-    <link rel="stylesheet" type="text/css" href="css/media_query_faq.css">
   </head>
 
   <body>
@@ -27,8 +26,7 @@
           <div class="secondary col">
             Secondary
             <p>
-              Describing words describe something. They modify something. Adjectives are one type of describing word that are commonly used. They are used to describe a noun or a pronoun. Adverbs are second type of descriptive word. They are used to describe a verb or an adverb. The pages on this site are organized by a word’s first letter. This is just demo for displaying the layout.
-            </p>
+             </p>
           </div>
           
           <div class="extra col">
@@ -67,12 +65,6 @@
         </div>
       </div>
 
-      <footer class="main-footer">
-        <div class="fwrapper">
-          <div class="fcol">link</div>
-          <div class="fcol">contact</div>
-          <div class="fcol">information</div>
-        </div>
-      </footer>
+      <?php include_once("footer.php");?>
     </body>
 </html>

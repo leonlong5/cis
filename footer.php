@@ -10,6 +10,7 @@
             <p>Email:</p>
           </div>
           <div class="fcol"><h2>information</h2>
+            <p><a href="login.php">Admin</a></p>
           </div>
         </div>
       </footer>

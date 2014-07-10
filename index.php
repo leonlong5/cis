@@ -22,7 +22,7 @@
               The School of Computing and Information Sciences (SCIS) offers both a Master of Science degree and a Doctor of Philosophy degree. The Master of Science degree provides study in state-of-the-art computer applications as well as an introduction to the theoretical foundations of computer science. The Doctor of Philosophy in Computer Science is designed to provide study in all major areas of computer science while leading to the frontiers of knowledge in a chosen field of concentration.
             </p>
             <p><img src="img/white/tag_fill_16x16.png"/> 
-              Please be note that this site is for graduate students only, if you want to find more other information, please go <a href="http://www.cis.fiu.edu/">here.</a>
+              Please be note that this site is for graduate students only, if you want to find some other information about FIU cis, please go <a href="http://www.cis.fiu.edu/">here.</a>
             </p>
           </div>
           
