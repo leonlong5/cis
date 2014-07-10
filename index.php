@@ -8,6 +8,7 @@
     <meta name="description" content="frequent asked question">
     <meta name="author" content="Long Wang">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_index.css">
     <link rel="stylesheet" type="text/css" href="css/media_query_index.css">
   </head>
 
@@ -16,21 +17,24 @@
       <div class="wrap">      
         <div class="content">
           <div class="main col">
-            FIU CIS Graduate Program
+            <h2><img src="img/white/cog_32x32.png"/> FIU CIS Graduate Program </h2>
             <p>
               The School of Computing and Information Sciences (SCIS) offers both a Master of Science degree and a Doctor of Philosophy degree. The Master of Science degree provides study in state-of-the-art computer applications as well as an introduction to the theoretical foundations of computer science. The Doctor of Philosophy in Computer Science is designed to provide study in all major areas of computer science while leading to the frontiers of knowledge in a chosen field of concentration.
+            </p>
+            <p><img src="img/white/tag_fill_16x16.png"/> 
+              Please be note that this site is for graduate students only, if you want to find more other information, please go <a href="http://www.cis.fiu.edu/">here.</a>
             </p>
           </div>
           
           <div class="secondary col">
-            Secondary
+            <h2><img src="img/white/lightbulb_20x32.png"/> Summary</h2>
             <p>
-              Describing words describe something. They modify something. Adjectives are one type of describing word that are commonly used. They are used to describe a noun or a pronoun. Adverbs are second type of descriptive word. They are used to describe a verb or an adverb. The pages on this site are organized by a word’s first letter. This is just demo for displaying the layout.
+               Many faculty have earned NSF and DOE Career Awards, Research awards from Google, IBM, Xerox, and NetApp.Faculty recognized with Distinguished Awards such as IEEE Fellow, ACM Fellow, Kaufman Professor, and AAAI Nils Nilsson.Best Conference Paper Awards from IEEE, ACSAC and other Computer Societies.
             </p>
           </div>
           
           <div class="extra col">
-            Introduction
+            <h2><img src="img/white/list_32x28.png"/> Introduction</h2>
             <p>
               Our faculty embodies a broad range of computing interests and has built dynamic and innovative research centers and groups around several areas of specialization. These include:
             </p>
@@ -58,12 +62,6 @@
         </div>
       </div>
 
-      <footer class="main-footer">
-        <div class="fwrapper">
-          <div class="fcol">link</div>
-          <div class="fcol">contact</div>
-          <div class="fcol">information</div>
-        </div>
-      </fotter>
+    <?php include_once("footer.php");?>
     </body>
 </html>

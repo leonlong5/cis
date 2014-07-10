@@ -8,6 +8,7 @@
     <meta name="description" content="frequent asked question">
     <meta name="author" content="Long Wang">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_faq.css">
     <link rel="stylesheet" type="text/css" href="css/media_query_faq.css">
   </head>
 
@@ -17,16 +18,16 @@
       <div class="wrap">      
         <div class="content">
           <div class="main col">
-            Frequent Asked Questions
+            <h2>Frequent Asked Questions</h2>
             <p>
-              The School of Computing and Information Sciences (SCIS) offers both a Master of Science degree and a Doctor of Philosophy degree. The Master of Science degree provides study in state-of-the-art computer applications as well as an introduction to the theoretical foundations of computer science. The Doctor of Philosophy in Computer Science is designed to provide study in all major areas of computer science while leading to the frontiers of knowledge in a chosen field of concentration.
+              At here you can find the most frequently asked questions by students, check it when you have questions. We will keep updating the questions, if you have any question or suggessions, please contact us!
             </p>
           </div>
           
           
           
           <div class="extra col">
-            Introduction
+            <h2>Introduction</h2>
             <p>
               Our faculty embodies a broad range of computing interests and has built dynamic and innovative research centers and groups around several areas of specialization. These include:
             </p>
@@ -49,7 +50,7 @@
               Cognitive Science, with emphasis on the philosophical, psychological and linguistic underpinnings of artificial intelligence.
               Bioinformatics and Computational Biology.
             </p>
-            <button class="btn">Click Me</button>
+            <button class="btn"><a href="">Click Me</a></button>
           </div>
 
           
@@ -57,12 +58,6 @@
         </div>
       </div>
 
-      <footer class="main-footer">
-        <div class="fwrapper">
-          <div class="fcol">link</div>
-          <div class="fcol">contact</div>
-          <div class="fcol">information</div>
-        </div>
-      </footer>
+<?php include_once("footer.php");?>
     </body>
 </html>
