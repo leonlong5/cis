@@ -1,5 +1,18 @@
+<?php 
+include_once("php_includes/check_login_status.php");
+
+$form = "<label for='title'> Title:</label><br />
+        <input id='title' type='text' size='100'/> <br />
+        <label for='message'> Content:</label><br />
+        <textarea id='message' rows='7' cols='100'></textarea> <br />
+        <button id='add'>Add</button>";
+    
+
+
+?>
+
 <!Doctype html>
-<html ng-app="app">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,8 +22,6 @@
     <meta name="author" content="Long Wang">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style_faq.css">
-    <link rel="stylesheet" type="text/css" href="css/media_query_faq.css">
-    <link href="css/xeditable.css" rel="stylesheet">
 
 
   </head>
@@ -27,16 +38,34 @@
             </p>
           </div>
           
-          
+          <?php
+            $sql = "SELECT * FROM faq";
+            $query = mysqli_query($db_conx, $sql);
+            $outputs ="";
+            while($row = mysqli_fetch_array($query)){
+              $output = "";
+              $title = $row['title'];
+              $content = $row['content'];
+              $output .= "<div class='lst'>";
+              $output .=  "<h3><img src='img/white/magnifying_glass_16x16.png'/> $title</h3>";
+              $output .=  "<p>$content</p>";
+              $output .= "</div>";
+              $outputs.= $output;
+            }
+          ?>
           
           <div class="extra col">
             <h2>Frequent Asked Questions</h2>
-            <div ng-controller="TextareaCtrl">
-              <a href="#" editable-textarea="user.desc" e-rows="7" e-cols="40">
-                <pre style="color:white;">{{ user.desc || 'no description' }}</pre>
-              </a>
-            </div>
+            <?php echo $outputs;?>
+            <hr>
             
+            <?php 
+            if($user_ok == true){
+            echo "<h2>Add new  FAQ blow.</h2>";
+            echo $form; 
+            }
+            ?>
+            <p id='status'></p>
           </div>
 
           
@@ -47,16 +76,32 @@
 <?php include_once("footer.php");?>
     
 <!-- put js at the end of the document -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-<script src="js/xeditable.js"></script>
-
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-        var app = angular.module("app", ["xeditable"]);
-        app.controller('TextareaCtrl', function($scope) {
-          $scope.user = {
-            desc: 'Title \ndescription!'
-          };
-        });
+
+$("#add").click(function(){
+  var tit = $('#title').val();
+  var mes = $('#message').val();
+  if(tit == "" || mes == ""){
+    $("#status").html("Please fill out all the information!");
+    return false;
+  }
+  $.ajax({
+      type: "POST",
+      url: 'insert.php',
+      data:{tit:tit, mes:mes},
+      success: function(data){
+        console.log(data);
+        $('#title').val('');
+        $('#message').val('');
+    }
+  });
+
+});
+//empty the input
+$('#title,#message').focus(function(){
+  $('#status').html("");
+});
 </script>
     </body>
 </html>

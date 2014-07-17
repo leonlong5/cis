@@ -5,6 +5,5 @@
             <a href="http://matrix.cs.fiu.edu/cis/faq.php">FAQ</a>
             <a href="#">Graduate Seminar</a>
             <a href="http://matrix.cs.fiu.edu/cis/grad_stud.php">Graduate students</a>
-            <a href="#">Contact</a>
           </nav>
       </header>

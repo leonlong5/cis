@@ -1,3 +1,14 @@
+<?php 
+include_once("php_includes/check_login_status.php");
+
+// if(isset($_SESSION["username"])){
+//   $u = preg_replace('#[^a-z0-9]#i', '', $_SESSION['username']);
+// } else {
+//     header("location: login.php");
+//     exit(); 
+// } 
+?>
+
 <!Doctype html>
 <html>
   <head>
@@ -9,7 +20,6 @@
     <meta name="author" content="Long Wang">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/style_index.css">
-    <link rel="stylesheet" type="text/css" href="css/media_query_index.css">
   </head>
 
   <body>

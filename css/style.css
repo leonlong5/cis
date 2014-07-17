@@ -63,19 +63,36 @@ header{
 nav{
   border-top:1px solid rgba(0,0,0,0.7);;
 }
-.logo, nav a{
+.logo, nav > a{
   display:inline-block;
   color:#FFF;
   text-decoration:none;
 }
-nav a{
+nav > a{
+  margin: -3px;
   transition:background 0.5s;
 }
-nav a:hover{
-  background:#FFF;
+/*for the admin status*/
+nav > span > a{
+  color:white;
+  font-size: 0.85em;
+}
+nav > span > a:hover{
+  color:brown;
+  text-decoration: underline;
+}
+/*for the admin status*/
+nav > a:hover{
+  background:steelblue;
   color:#D5AF18;
+  border-bottom: 3px #D5AF18 solid;
 }
 
+.selected{
+  background:steelblue;
+  color:#D5AF18;
+  border-bottom: 3px #D5AF18 solid;
+}
 
 /*****************************************
 main-footer
