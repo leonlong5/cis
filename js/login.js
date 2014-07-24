@@ -18,6 +18,7 @@ $('#loginbtn').click(function(){
 				$('#status').html("username or password is not correct, Please try again!")
 			}else{
 				$("#status").html("Hi "+data+",Log in successfully, thank you.");
+				window.location.replace("http://matrix.cs.fiu.edu/cis/index.php");
 			}
 		}
 	});

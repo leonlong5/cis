@@ -6,8 +6,6 @@ $form = "<label for='title'> Title:</label><br />
         <label for='message'> Content:</label><br />
         <textarea id='message' rows='7' cols='100'></textarea> <br />
         <button id='add'>Add</button>";
-    
-
 
 ?>
 
@@ -39,19 +37,24 @@ $form = "<label for='title'> Title:</label><br />
           </div>
           
           <?php
+          //**************FAQ display here
             $sql = "SELECT * FROM faq";
             $query = mysqli_query($db_conx, $sql);
             $outputs ="";
             while($row = mysqli_fetch_array($query)){
               $output = "";
+              $id = $row['id'];
               $title = $row['title'];
               $content = $row['content'];
               $output .= "<div class='lst'>";
-              $output .=  "<h3><img src='img/white/magnifying_glass_16x16.png'/> $title</h3>";
+              $output .=  "<h3><img src='img/white/magnifying_glass_16x16.png'/> $title ";
+              if($user_ok==true){ $output .= "<button class='del' value='$id'> delete</button>";}
+              $output .= "</h3>";
               $output .=  "<p>$content</p>";
               $output .= "</div>";
               $outputs.= $output;
             }
+          //**************FAQ display here
           ?>
           
           <div class="extra col">
@@ -77,31 +80,6 @@ $form = "<label for='title'> Title:</label><br />
     
 <!-- put js at the end of the document -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript">
-
-$("#add").click(function(){
-  var tit = $('#title').val();
-  var mes = $('#message').val();
-  if(tit == "" || mes == ""){
-    $("#status").html("Please fill out all the information!");
-    return false;
-  }
-  $.ajax({
-      type: "POST",
-      url: 'insert.php',
-      data:{tit:tit, mes:mes},
-      success: function(data){
-        console.log(data);
-        $('#title').val('');
-        $('#message').val('');
-    }
-  });
-
-});
-//empty the input
-$('#title,#message').focus(function(){
-  $('#status').html("");
-});
-</script>
+<script type="text/javascript" src="js/faq.js"></script>
     </body>
 </html>

@@ -16,11 +16,29 @@ content
     float: left;
     padding: 10px;
     border-radius: 5px;
+    background: #113378;
+    color: #D5AF18;
+    border-color: #D5AF18;
 }
-.lst{
+.lst span{
+  /*visibility: hidden;*/
+}
+.lst button{
+  border-radius: 5px;
+  background: #113378;
+  color: #D5AF18;
+  border-color: #D5AF18;
+}
+.lst a{
+  color: white;
+  float:right;
+  font-size: 0.8em;
+}
+.lst a:hover{
+  text-decoration: underline;
 }
 .lst h3{
-  
+
 }
 .lst p{
 

@@ -75,7 +75,7 @@ if(isset($_POST["user"]) && isset($_POST["pass"])){
     	margin: 20px auto;
     }
     #loginbtn{
-    	width: 60px;
+    	width: 80px;
     	height: 30px;
     }
 </style>
@@ -94,8 +94,9 @@ if(isset($_POST["user"]) && isset($_POST["pass"])){
 			    <input type="password" id="password" maxlength="100">
 			    <br />
 			    <button id="loginbtn" type="submit">Login</button> 
+			    <a href="index.php">back</a>
 			    <p id="status" style="color:#F00"></p>
-			    <a href="index.php">back to home page.</a>
+			    
 			    </fieldset>
 			  </form>
 			  <!-- LOGIN FORM -->

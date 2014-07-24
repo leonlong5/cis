@@ -72,18 +72,10 @@ nav > a{
   margin: -3px;
   transition:background 0.5s;
 }
-/*for the admin status*/
-nav > span > a{
-  color:white;
-  font-size: 0.85em;
-}
-nav > span > a:hover{
-  color:brown;
-  text-decoration: underline;
-}
-/*for the admin status*/
+
+
 nav > a:hover{
-  background:steelblue;
+  background:#000033;
   color:#D5AF18;
   border-bottom: 3px #D5AF18 solid;
 }
