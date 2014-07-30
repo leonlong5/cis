@@ -20,8 +20,13 @@ content
     color: #D5AF18;
     border-color: #D5AF18;
 }
+.lst{
+  list-style: none;
+  margin-bottom: 30px;
+  border-bottom: 1px gray dotted;
+}
 .lst span{
-  /*visibility: hidden;*/
+  color:#D5AF18;
 }
 .lst button{
   border-radius: 5px;
@@ -42,6 +47,14 @@ content
 }
 .lst p{
 
+}
+
+
+.lables{
+  font-size: 0.8em;
+  background: #33CCCC;
+  border-radius: 5px;
+  padding: 2px;
 }
 /********************************************
 media queries
@@ -65,6 +78,6 @@ media queries
 /*set the max-width*/
 @media only screen and (min-width:1024px){
   .wrap{
-    max-width:1024px;
+    max-width:1200px;
   }
 }

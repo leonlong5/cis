@@ -1,6 +1,44 @@
 <?php 
 include_once("php_includes/check_login_status.php");
 
+
+class faq {
+  public $que ="";
+  public $lab = "";
+  public $ans = "";
+}
+// AJAX CALLS 
+
+include_once("php_includes/db_conx.php");
+if(isset($_POST["test"])){
+            $arr = array();
+
+            $sql = "SELECT * FROM faq";
+            $query = mysqli_query($db_conx, $sql);
+            
+            while($row = mysqli_fetch_array($query)){
+              $id = $row['id'];
+              $title = $row['title'];
+              $lable = $row['lable'];
+              $content = $row['content'];
+              
+              $e = new faq();
+              $e->que = $title;
+              $e->lab = $lable;
+              $e->ans = $content;
+              array_push($arr, json_encode($e));
+          }
+
+          if($user_ok==true){ 
+            echo "OK";
+          }
+          echo "|";
+          echo json_encode($arr);
+          exit();
+}
+
+
+
 $form = "<label for='title'> Title:</label><br />
         <input id='title' type='text' size='100'/> <br />
         <label for='lables'> Lable:</label><br />
@@ -12,7 +50,7 @@ $form = "<label for='title'> Title:</label><br />
 ?>
 
 <!Doctype html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -37,52 +75,17 @@ $form = "<label for='title'> Title:</label><br />
               At here you can find the most frequently asked questions by students, check it when you have questions. We will keep updating the questions, if you have any question or suggessions, please contact us!
             </p>
           </div>
-          
-          <?php
-          //**************FAQ display here
-            class faq {
-              public $que ="";
-              public $lab = "";
-              public $ans = "";
-            }
-            $arr = array();
-
-            $sql = "SELECT * FROM faq";
-            $query = mysqli_query($db_conx, $sql);
-            $outputs ="";
-            while($row = mysqli_fetch_array($query)){
-              $output = "";
-              $id = $row['id'];
-              $title = $row['title'];
-              $lable = $row['lable'];
-              $content = $row['content'];
-              
-              $e = new faq();
-              $e->que = $title;
-              $e->lab = $lable;
-              $e->ans = $content;
-              array_push($arr, json_encode($e));
-
-              $output .= "<li class='lst'>";
-              $output .=  "<h3><img src='img/white/magnifying_glass_16x16.png'/> <span>Q: $title</span> <lable class='lables'>$lable</lable>";
-              if($user_ok==true){ $output .= "<button class='del' value='$id'> delete</button>";}
-              $output .= "</h3>";
-              $output .=  "<p>A: $content</p>";
-              $output .= "</li>";
-              $outputs.= $output;
-            }
-          //**************FAQ display here
-          ?>
+     
           
           <div class="extra col">
             <h2>Frequent Asked Questions</h2>
             Search:<input type="search" id="searchLable"/>
-            <?php echo $outputs;?>
+            <div id="main"></div>
             <hr>
             
             <?php 
             if($user_ok == true){
-            echo "<h2>Add new  FAQ blow.</h2>";
+            echo "<h2>Add new FAQ blow.</h2>";
             echo $form;
             }
             ?>
