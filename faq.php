@@ -3,8 +3,14 @@ include_once("php_includes/check_login_status.php");
 
 $form = "<label for='title'> Title:</label><br />
         <input id='title' type='text' size='100'/> <br />
-        <label for='lables'> Lable:</label><br />
-        <input id='lables' type='text' size ='20'><br />
+        <label> Lable:</label><br />
+         <select id='lables'>
+                <option>General</option>
+                <option>Admissions</option>
+                <option>Ph.D</option>
+                <option>Master</option>
+                <option>Other</option>
+          </select></br>
         <label for='message'> Content:</label><br />
         <textarea id='message' rows='7' cols='100'></textarea> <br />
         <button id='add'>Add</button>";
@@ -76,8 +82,18 @@ $form = "<label for='title'> Title:</label><br />
           
           <div class="extra col">
             <h2>Frequent Asked Questions</h2>
-            Search:<input type="search" id="searchLable"/>
+            Category
+            <select id="category">
+                <option>All</option>
+                <option>General</option>
+                <option>Admissions</option>
+                <option>Ph.D</option>
+                <option>Master</option>
+                <option>Other</option>
+            </select>
+            <div id="container">
             <?php echo $outputs;?>
+            </div>
             <hr>
             
             <?php 

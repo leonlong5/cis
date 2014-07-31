@@ -56,6 +56,13 @@ content
   border-radius: 5px;
   padding: 2px;
 }
+
+#category{
+  padding: 5px;
+}
+#category option{
+  background: #D5AF18;
+}
 /********************************************
 media queries
 ********************************************/

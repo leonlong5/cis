@@ -11,7 +11,7 @@ $("#add").click(function(){
   //console.log(tit +" "+ mes +" "+ lables);
   $.ajax({
       type: "POST",
-      url: 'insert.php',
+      url: 'php_includes/insert.php',
       data:{tit:tit, mes:mes, lables:lables},
       success: function(data){
       	//console.log(data);
@@ -29,18 +29,52 @@ $('#title,#message,#lables').focus(function(){
 });
 
 //delete an existed FAQ
-$(".del").click(function(){
+$("#container").on("click",".del",function(){
   var qid = $(this).val();
   console.log(qid);
   $.ajax({
     type: "POST",
-    url: "delete.php",
+    url: "php_includes/delete.php",
     data:{qid:qid},
     success: function(data){
       location.reload();
     }
   });
 });
+
+//filter
+$("#category").change(function(){
+	var cate = $(this).val();
+	$.ajax({
+		type:"POST",
+		url:"php_includes/faq_filter.php",
+		data:{cate:cate},
+		success: function(data){
+			$(".lst").remove();
+			$("#container").append(data);
+		}
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 // function loadajax(){
 //   $.ajax({ 
